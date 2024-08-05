@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { Common } from "../common/Common"; 
+import { TestData } from "../common/TestData"; 
 
 export class PageSignUp {
     constructor(page) {

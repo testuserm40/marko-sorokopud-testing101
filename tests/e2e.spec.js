@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-import { Common } from "../common/Common"; 
+import { TestData } from "../common/TestData";
+import { URLs } from "../common/URLs";
 import { PageSignUp } from "../page-objects/PageSignUp"; 
 import { PageMyAccount } from "../page-objects/PageMyAccount";
 
