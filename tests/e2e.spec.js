@@ -1,9 +1,9 @@
-import { test, expect } from "@playwright/test";
+// import { test, expect } from "@playwright/test";
 
-import { TestData } from "../common/TestData";
-import { URLs } from "../common/URLs";
-import { PageSignUp } from "../page-objects/PageSignUp"; 
-import { PageMyAccount } from "../page-objects/PageMyAccount";
+// import { TestData } from "../common/TestData";
+// import { URLs } from "../common/URLs";
+// import { PageSignUp } from "../page-objects/PageSignUp"; 
+// import { PageMyAccount } from "../page-objects/PageMyAccount";
 
 // Lesson 22 :: Form fields
 // https://www.udemy.com/course/automated-web-testing/learn/lecture/35756730

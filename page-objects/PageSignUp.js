@@ -1,6 +1,3 @@
-import { test, expect } from "@playwright/test";
-import { TestData } from "../common/TestData"; 
-
 export class PageSignUp {
     constructor(page) {
         this.page = page;   
