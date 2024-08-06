@@ -66,7 +66,7 @@ test.describe("User Login Tests", () => {
     // Step 1. Go to Log in form
     await pageSignup.goToLoginForm();
   
-    // Step 2: Enter invalid credentials into the Login form fields and submit the form
+    // Step 2. Fill in the login form with not existed email submit it
     await pageSignup.loginFormEmailInput.waitFor();
     await pageSignup.loginFormEmailInput.fill(TestData.userNotExistedEmail);
     await pageSignup.loginFormPasswordInput.waitFor();
@@ -80,7 +80,7 @@ test.describe("User Login Tests", () => {
     await expect(pageSignup.loginFormInvalidLoginErrorMessage).toHaveText("This email doesn't match any account. Try again.");
   });
 
-  
+
   test("id:004 As a user I would like to receive an error message, if email is empty", async ({ page }) => {
 
     // Step 1. Go to Log in form
