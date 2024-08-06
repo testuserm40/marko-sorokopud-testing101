@@ -19,6 +19,7 @@ test.describe("User Login Tests", () => {
 
     // Step 1. Go to Log in form
     await pageSignup.goToLoginForm();
+    //
 
     // Step 2. Enter valid data into the Login form fields and Submit the form
     await pageSignup.loginFormEmailInput.waitFor();
