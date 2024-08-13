@@ -113,9 +113,17 @@ test.only("End to End purchase", async ({ page }) => {
     await pageCheckout.inputRegion.fill("Auvergne-Rhône-Alpes");
     await pageCheckout.buttonFormDetailsContinue.waitFor();
     await pageCheckout.buttonFormDetailsContinue.click();
+    await page.waitForTimeout(2000);
     await pageCheckout.buttonDeliveryMethodContinue.waitFor();
     await pageCheckout.buttonDeliveryMethodContinue.click();
-    await page.pause();
-    //await common.waitSeconds(2000);
+    await page.waitForTimeout(3000);
+    await pageCheckout.buttonPlaceOrder.waitFor();
+    await pageCheckout.buttonPlaceOrder.click();
+    await page.waitForTimeout(5000);
+
+    await pageCart.page.waitForURL(/\/thank-you-page/, { timeout: 10000 });
+    await expect(page).toHaveURL(/\/thank-you-page/);
+    await expect(page).toHaveTitle("Thank You Page | Software Testing 101");
+    //await page.waitForTimeout(2000);
     //await page.pause();
 })

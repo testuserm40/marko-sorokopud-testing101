@@ -14,6 +14,8 @@ export class PageCheckout {
         this.inputRegion = page.locator('div.s__1XLeS_.sVTOzNC input.s_pqLT_').nth(2);
         this.buttonFormDetailsContinue = page.locator('[data-hook="FormDetailsButtons.continue"]');
         this.buttonDeliveryMethodContinue = page.locator('[data-hook="DeliveryMethodStep.continue"]');
+        this.buttonPlaceOrder = page.locator('[data-hook="place-order-button"]');
+
 
     }
 
