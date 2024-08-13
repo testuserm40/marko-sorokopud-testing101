@@ -6,6 +6,16 @@ export class TestData {
     static userNotExistedEmail = 'testuser@unknownemail.com';
     static userInvalidPassword = 'InvalidPassword';
     static userGeneratedEmail = '';
+    static products = [
+        {
+            name: 'Americano',
+            price: '40.01$',
+        },
+        {
+            name: 'Biscotti',
+            price: '45.50$',
+        },
+    ];
 
 
     // Lesson 23 :: Third-party dependencies and UUIDs

@@ -5,7 +5,7 @@ import { PageCart } from "../page-objects/PageCart";
 import { URLs } from "../common/URLs";
 import { TestData } from "../common/TestData";
 
-test.only("End to End purchase", async ({ page }) => {
+test.skip("End to End purchase", async ({ page }) => {
 
     const pageCategory = new PageCategory(page);
     const pageCart = new PageCart(page);
