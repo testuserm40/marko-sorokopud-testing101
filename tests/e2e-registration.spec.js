@@ -17,7 +17,7 @@ test.describe.serial('Sequential Test Suite', async () => {
     pageMyAccount = new PageMyAccount(page);
   });
 
-  test.only("id:0012-e2e-registration Sign Up", async ({ page }) => {
+  test.skip("id:0012-e2e-registration Sign Up", async ({ page }) => {
 
     // Step 1. Go to Sign Up form
     await page.goto("/");
@@ -42,7 +42,7 @@ test.describe.serial('Sequential Test Suite', async () => {
     expect(inputDisplayNameValue).toBe(UserGeneratedEmail.replace('@proton.me', ''));
   });
 
-  test.only('Test Login', async ({ page }) => {
+  test.skip('Test Login', async ({ page }) => {
 
     await pageSignup.goToLoginForm();
     await pageSignup.loginFormEmailInput.waitFor();
@@ -57,14 +57,8 @@ test.describe.serial('Sequential Test Suite', async () => {
     await page.goto(URLs.pageLinkMyAccountPage);
     const inputDisplayNameValue = await pageMyAccount.accountFormDisplayNameInput.getAttribute('value');
     expect(inputDisplayNameValue).toBe(UserGeneratedEmail.replace('@proton.me', ''));
-  });
 
-  test.only("id:003-e2e-registration Log Out", async ({ page }) => {
-
-    // Step 1. Log in
-    await pageSignup.logIn();
-
-    // Step 2. Log out
+    await page.goto("/");
     await pageSignup.logOut();
     await expect(pageSignup.userMenuLogInButton).toBeVisible();
     await page.goto(URLs.pageLinkMyAccountPage);

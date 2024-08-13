@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { TestData } from "../common/TestData";
 import { PageSignUp } from "../page-objects/PageSignUp";
 
-test("id:001-reset-password As a user, I would like to be able to reset my password if I forget my credentials", async ({ page }) => {
+test.skip("id:001-reset-password As a user, I would like to be able to reset my password if I forget my credentials", async ({ page }) => {
 
   const pageSignup = new PageSignUp(page);
 

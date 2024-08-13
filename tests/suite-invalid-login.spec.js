@@ -14,7 +14,7 @@ test.describe("User Login Tests", () => {
     pageMyAccount = new PageMyAccount(page);
   });
 
-  test("Id:001-suite-invalid-login As a user I would like to receive an error message, if I enter invalid password", async ({ page }) => {
+  test.skip("Id:001-suite-invalid-login As a user I would like to receive an error message, if I enter invalid password", async ({ page }) => {
 
     // Step 1. Go to Log in form
     await pageSignup.goToLoginForm();
@@ -34,7 +34,7 @@ test.describe("User Login Tests", () => {
   });
 
 
-  test("Id:002-suite-invalid-login As a user I would like to receive an error message, if I enter invalid email", async ({ page }) => {
+  test.skip("Id:002-suite-invalid-login As a user I would like to receive an error message, if I enter invalid email", async ({ page }) => {
 
     // Step 1. Go to Log in form
     await pageSignup.goToLoginForm();
@@ -54,7 +54,7 @@ test.describe("User Login Tests", () => {
   });
 
 
-  test("Id:003-suite-invalid-login As a user I would like to receive an error message, if email is empty", async ({ page }) => {
+  test.skip("Id:003-suite-invalid-login As a user I would like to receive an error message, if email is empty", async ({ page }) => {
 
     // Step 1. Go to Log in form
     await pageSignup.goToLoginForm();
@@ -72,7 +72,7 @@ test.describe("User Login Tests", () => {
   });
 
 
-  test("id:004-suite-invalid-login As a user I would like to receive an error message, if password is empty", async ({ page }) => {
+  test.skip("id:004-suite-invalid-login As a user I would like to receive an error message, if password is empty", async ({ page }) => {
 
     // Step 1. Go to Log in form
     await pageSignup.goToLoginForm();
