@@ -5,7 +5,7 @@ import { PageCart } from "../page-objects/PageCart";
 import { URLs } from "../common/URLs";
 import { TestData } from "../common/TestData";
 
-test.skip("End to End purchase", async ({ page }) => {
+test.slow("End to End purchase", async ({ page }) => {
 
     const pageCategory = new PageCategory(page);
     const pageCart = new PageCart(page);
@@ -32,23 +32,23 @@ test.skip("End to End purchase", async ({ page }) => {
 
     //Step 3. Add first product to the cart
     await pageCategory.addProductToCart(0);
-    await pageCategory.checkCartTotalPrice('40,01$');
+    await pageCategory.checkCartTotalPrice(TestData.products[0].price);
     await pageCategory.checkCartItemsNumber(1);
-    await pageCategory.checkCartItemName(0, 'Americano');
+    await pageCategory.checkCartItemName(0, TestData.products[0].name);
     await pageCategory.clickCloseIframeButton();
 
     //Step 4. Add second product to the cart
     await pageCategory.addProductToCart(1);
     await pageCategory.checkCartTotalPrice('85,51$');
     await pageCategory.checkCartItemsNumber(2);
-    await pageCategory.checkCartItemName(1, 'Biscotti');
+    await pageCategory.checkCartItemName(1, TestData.products[1].name);
     await pageCategory.clickCloseIframeButton();
 
     //Step 5. Add third product to the cart
     await pageCategory.addProductToCart(2);
-    await pageCategory.checkCartTotalPrice('111,50$');
+    await pageCategory.checkCartTotalPrice(TestData.products[2].price);
     await pageCategory.checkCartItemsNumber(3);
-    await pageCategory.checkCartItemName(2, 'Cookie');
+    await pageCategory.checkCartItemName(2, TestData.products[2].name);
     await pageCategory.clickCloseIframeButton();
     //await common.waitSeconds(2000);
 
@@ -96,21 +96,21 @@ test.skip("End to End purchase", async ({ page }) => {
     await pageCheckout.inputEmail.waitFor();
     await pageCheckout.inputEmail.fill(TestData.userEmail);
     await pageCheckout.inputFirstName.waitFor();
-    await pageCheckout.inputFirstName.fill("John");
+    await pageCheckout.inputFirstName.fill(TestData.address.firstName);
     await pageCheckout.inputLastName.waitFor();
-    await pageCheckout.inputLastName.fill("Doe");
+    await pageCheckout.inputLastName.fill(TestData.address.lastName);
     await pageCheckout.inputPhone.waitFor();
-    await pageCheckout.inputPhone.fill("17863031484");
+    await pageCheckout.inputPhone.fill(TestData.address.phone);
     await pageCheckout.inputCountry.waitFor();
-    await pageCheckout.inputCountry.fill("France");
+    await pageCheckout.inputCountry.fill(TestData.address.country);
     await pageCheckout.inputAddress.waitFor();
-    await pageCheckout.inputAddress.fill("Av. Gustave Eiffel");
+    await pageCheckout.inputAddress.fill(TestData.address.street);
     await pageCheckout.inputPostalCode.waitFor();
-    await pageCheckout.inputPostalCode.fill("75007");
+    await pageCheckout.inputPostalCode.fill(TestData.address.postalCode);
     await pageCheckout.inputCity.waitFor();
-    await pageCheckout.inputCity.fill("Paris");
+    await pageCheckout.inputCity.fill(TestData.address.city);
     await pageCheckout.inputRegion.waitFor();
-    await pageCheckout.inputRegion.fill("Auvergne-Rhône-Alpes");
+    await pageCheckout.inputRegion.fill(TestData.address.region);
     await pageCheckout.buttonFormDetailsContinue.waitFor();
     await pageCheckout.buttonFormDetailsContinue.click();
     await page.waitForTimeout(2000);

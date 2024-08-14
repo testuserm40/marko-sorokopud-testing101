@@ -9,13 +9,28 @@ export class TestData {
     static products = [
         {
             name: 'Americano',
-            price: '40.01$',
+            price: '40,01$',
         },
         {
             name: 'Biscotti',
-            price: '45.50$',
+            price: '45,50$',
+        },
+        {
+            name: 'Cookie',
+            price: '111,50$',
         },
     ];
+    static address =
+        {
+            firstName: 'John',
+            lastName: 'Doe',
+            phone: '17863031484',
+            country: 'France',
+            street: 'Av. Gustave Eiffel',
+            postalCode: '75007',
+            city: 'Paris',
+            region: 'Auvergne-Rhône-Alpes'
+        };
 
 
     // Lesson 23 :: Third-party dependencies and UUIDs

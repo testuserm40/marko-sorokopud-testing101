@@ -3,7 +3,12 @@ import { test, expect } from "@playwright/test";
 export class PageCategory {
     constructor(page) {
         this.page = page;
-        this.cartTotalPrice = page.frameLocator('xpath=/html/body/div/div/div/iframe').locator('[data-hook="cart-widget-total"]');
+
+        this.cartIframeTotalPrice = page.frameLocator('xpath=/html/body/div/div/div/iframe').locator('[data-hook="cart-widget-total"]');
+        this.cartIframeItemName = page.frameLocator('xpath=/html/body/div/div/div/iframe').locator('[data-hook="cart-widget-name"]');
+        this.cartIframeItemPrice = page.frameLocator('xpath=/html/body/div/div/div/iframe').locator('[data-hook="cart-widget-item-price"]');
+
+
         this.productList = page.locator('ul[data-hook="product-list-wrapper"]');
 
         this.cartItem = page.frameLocator('xpath=/html/body/div/div/div/iframe').locator('.cart-line-item-list .cart-line-item');
@@ -18,6 +23,7 @@ export class PageCategory {
         const products = this.addToCartButton;
         const count = await products.count();
         for (let i = 0; i < count; i++) {
+            await products.nth(i).waitFor();
             await products.nth(i).click();
             await this.clickCloseIframeButton();
         }
@@ -38,6 +44,7 @@ export class PageCategory {
                 break;
             }
         }
+        await this.addToCartButton.nth(productIndex).waitFor();
         await this.addToCartButton.nth(productIndex).click();
     }
 
